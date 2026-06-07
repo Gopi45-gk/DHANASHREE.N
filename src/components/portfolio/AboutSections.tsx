@@ -1,5 +1,5 @@
 import { Section } from "./Section";
-import labPhoto from "@/assets/dhanashree-lab.png.asset.json";
+
 
 const focusAreas = [
   "Molecular Biology",
@@ -27,7 +27,7 @@ export function About() {
         <div className="glass group relative overflow-hidden rounded-3xl p-2.5">
           <div className="relative h-full min-h-80 overflow-hidden rounded-2xl">
             <img
-              src={labPhoto.url}
+              src="/dhanashree-lab.png"
               alt="Dhanashree N working in a biotechnology laboratory"
               className="h-full w-full object-cover transition-transform duration-700 group-hover:scale-105"
               loading="lazy"
