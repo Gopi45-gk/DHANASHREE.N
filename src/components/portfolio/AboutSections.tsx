@@ -1,4 +1,5 @@
 import { Section } from "./Section";
+import labPhoto from "@/assets/dhanashree-lab.png.asset.json";
 
 const focusAreas = [
   "Molecular Biology",
