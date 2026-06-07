@@ -1,4 +1,5 @@
 import { Section } from "./Section";
+import labPhoto from "@/assets/dhanashree-lab.png.asset.json";
 
 const focusAreas = [
   "Molecular Biology",
@@ -22,37 +23,56 @@ const highlights = [
 export function About() {
   return (
     <Section id="about" eyebrow="About Me" title="Bridging Biology & Intelligent Technology">
-      <div className="grid gap-8 lg:grid-cols-2">
-        <div className="glass rounded-3xl p-8">
-          <h3 className="text-xl font-semibold">A Research-Driven Biotechnologist</h3>
-          <p className="mt-4 text-muted-foreground">
-            A highly accomplished Biotechnology undergraduate with expertise spanning the wet lab,
-            computational biology, and AI-driven innovation. Focused on translating biological
-            research into real-world diagnostics, healthcare, and agricultural solutions.
-          </p>
-          <div className="mt-6 flex flex-wrap gap-2.5">
-            {focusAreas.map((f) => (
-              <span
-                key={f}
-                className="rounded-full border border-border bg-secondary/40 px-3.5 py-1.5 text-sm"
-              >
-                {f}
+      <div className="grid items-stretch gap-8 lg:grid-cols-[0.8fr_1.2fr]">
+        <div className="glass group relative overflow-hidden rounded-3xl p-2.5">
+          <div className="relative h-full min-h-80 overflow-hidden rounded-2xl">
+            <img
+              src={labPhoto.url}
+              alt="Dhanashree N working in a biotechnology laboratory"
+              className="h-full w-full object-cover transition-transform duration-700 group-hover:scale-105"
+              loading="lazy"
+            />
+            <div className="absolute inset-0 bg-gradient-to-t from-navy/85 via-navy/10 to-transparent" />
+            <div className="absolute bottom-4 left-4 right-4">
+              <span className="glass inline-flex items-center gap-2 rounded-full px-3.5 py-1.5 text-xs font-semibold text-primary">
+                <span className="h-2 w-2 animate-pulse rounded-full bg-primary" />
+                In the Lab · Hands-on Research
               </span>
-            ))}
+            </div>
           </div>
         </div>
-        <div className="glass rounded-3xl p-8">
-          <h3 className="text-xl font-semibold">Key Highlights</h3>
-          <ul className="mt-5 space-y-4">
-            {highlights.map((h) => (
-              <li key={h} className="flex items-start gap-3">
-                <span className="mt-1 grid h-6 w-6 shrink-0 place-items-center rounded-full bg-primary/15 text-xs text-primary">
-                  ✓
+        <div className="flex flex-col gap-8">
+          <div className="glass rounded-3xl p-8">
+            <h3 className="text-xl font-semibold">A Research-Driven Biotechnologist</h3>
+            <p className="mt-4 text-muted-foreground">
+              A highly accomplished Biotechnology undergraduate with expertise spanning the wet lab,
+              computational biology, and AI-driven innovation. Focused on translating biological
+              research into real-world diagnostics, healthcare, and agricultural solutions.
+            </p>
+            <div className="mt-6 flex flex-wrap gap-2.5">
+              {focusAreas.map((f) => (
+                <span
+                  key={f}
+                  className="rounded-full border border-border bg-secondary/40 px-3.5 py-1.5 text-sm"
+                >
+                  {f}
                 </span>
-                <span className="font-medium">{h}</span>
-              </li>
-            ))}
-          </ul>
+              ))}
+            </div>
+          </div>
+          <div className="glass rounded-3xl p-8">
+            <h3 className="text-xl font-semibold">Key Highlights</h3>
+            <ul className="mt-5 grid gap-4 sm:grid-cols-2">
+              {highlights.map((h) => (
+                <li key={h} className="flex items-start gap-3">
+                  <span className="mt-1 grid h-6 w-6 shrink-0 place-items-center rounded-full bg-primary/15 text-xs text-primary">
+                    ✓
+                  </span>
+                  <span className="font-medium">{h}</span>
+                </li>
+              ))}
+            </ul>
+          </div>
         </div>
       </div>
     </Section>
